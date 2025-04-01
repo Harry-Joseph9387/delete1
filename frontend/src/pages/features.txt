@@ -1,0 +1,35 @@
+->login functionality
+    ->if login credentials not in db, alerts the user as invalid
+    ->admin can also login as same as a normal user
+
+->signup 
+    ->only one user can have 1 email
+
+->events page
+    ->like/unlike
+    ->register/unregister
+    ->add comments
+
+->adding event
+    ->event by anyone
+    ->event name is unique
+    ->provide image for event 
+
+->profile
+    ->can update profile details
+        ->name,email,phone,location,bio
+        ->used username,email cannot be saved as new update
+            ->user can change their email to an unused email
+    ->can see user's organized events  
+        ->can see/remove registered users with an email
+        ->can update the events
+            ->prevents conflict of same eventname after updation 
+
+->admin 
+    ->host new events 
+    ->can delete or update others events
+        ->alerts registered users about update through email
+    ->can remove registered users from others events
+        ->alerts registered users about  through email
+    ->can delete users 
+        ->alerts  users  through email

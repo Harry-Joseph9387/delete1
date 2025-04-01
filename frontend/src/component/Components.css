@@ -1,0 +1,98 @@
+.navbar{
+    width:40%;
+    border-radius: 30px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    height:10%;
+    background-color:rgba(82, 100, 101, 0.52);
+    display: flex;
+    justify-content: space-around;
+    gap:150px;
+    align-items: center;
+    margin-right: 10px;
+    position: fixed;
+    z-index: 12;
+    top:15px;
+}
+.navbar img{
+    width: 60px;
+    height:60px;
+    border-radius: 10px;
+}
+.links{
+    gap:20px;
+    display: flex;
+    
+}
+.navbar-links{
+    display: flex;
+    gap:20px;
+}
+.navbar h2{
+    color:white;
+}
+.navbar-profile{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.navbar-profile button{
+    padding:0px 10px;
+    border-radius: 10px;
+}
+
+/* ---------------------------------------------- */
+
+.sidebar{
+    width:0%;
+    height:100%;
+    background-color: blueviolet;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:0;
+}
+.sidebar .close{
+    position: absolute;
+    right:0;
+    top:0;
+}
+.sidebar .open{
+    width:30px;
+    height:30px;
+    position: absolute;
+    right:-30px;
+    top:0;
+}
+@media(min-width:900px){
+    .sidebar .open{
+        display: none;
+    }
+}
+
+.sidebar .links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 80%;
+    height: 95%;
+}
+.registration-status-update{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  gap:20px;
+}
+.registration-status-update h4{
+  color:white;
+}
+
+.update-button{
+    width: 60px;
+    height:25px;
+    border-radius:10px;
+    
+}

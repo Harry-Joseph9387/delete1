@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../pics/fire.jpg') no-repeat center;
+    background-size: cover;
+    z-index: 20;
+    position: relative;
+}
+.box {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    border-radius: 40px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgb(255, 156, 8);
+    box-shadow: 3px 3px 15px rgb(255, 156, 8);
+}
+
+.box input {
+    width: 85%;
+    height: 20px;
+    padding: 10px 30px 10px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 156, 8);
+
+}
+
+.about {
+    width: 85%;
+    height: 100px;
+    padding: 10px 30px 10px 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 156, 8);
+    resize: none;
+}
+
+
+.box label {
+    align-self: start;
+    padding-left: 22px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1.5px -1.5px orange;
+}
+
+.bp {
+    width: 120px;
+    height: 48px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(245, 148, 2);
+    margin-top: 10px;
+}
+
+.bp:hover {
+    background-color: rgb(248, 54, 54);
+    color: aliceblue;
+}

@@ -1,0 +1,117 @@
+.loginmain{
+    background-color: tan;
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    background: url('../pics/bg.jpg')
+}
+.box {
+    width: 420px;
+    color: white;
+    border-radius: 30px;
+    padding: 60px 40px 60px 40px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(141, 174, 180, 0.301);
+    box-shadow: 3px 3px 7px;
+
+}
+
+.box h1 {
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 1.5px 2px rgb(121, 230, 230), -3.5px -2.5px rgb(7, 20, 20);
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    background: transparent;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: transparent;
+    border: 3.5px solid rgba(141, 174, 180, 0.301);
+    color: white;
+    font-size: 16px;
+    padding-left: 20px;
+
+}
+
+.inputbox i {
+    position: absolute;
+    right: 20px;
+    margin-top: 15px;
+    font-size: 19px;
+
+}
+
+.inputbox ::placeholder {
+    color: aliceblue;
+}
+
+.checkforgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -5px 5px 13px 10px;
+
+}
+
+.checkforgot label input {
+    margin-right: 5px;
+    accent-color: rgb(255, 255, 255);
+}
+
+.checkforgot a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.checkforgot a:hover {
+    text-decoration: underline;
+    color: rgba(1, 27, 32, 0.74);
+}
+
+.btnn {
+    width: 100%;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.btnn:hover {
+    color: rgb(173, 228, 235);
+    background-color: rgba(1, 27, 32, 0.74);
+}
+
+.reg p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.reg a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.reg a:hover {
+    text-decoration: underline;
+    color: rgba(1, 27, 32, 0.74);
+}

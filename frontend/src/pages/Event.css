@@ -1,0 +1,168 @@
+.event-main{
+    width: 100%;
+    height:100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}
+.event-main-no-use-div{
+    height: 100%;
+    width: 100%;
+}
+.eventBackgroundImg{
+    width: 100%;
+    max-width: 500px;
+    height:200px;   
+}
+.event-content{
+    padding: 25px;
+    border: 1px solid #ccc; /* Slightly lighter border for a subtle look */
+    border-radius: 16px; /* More rounded corners */
+    background: linear-gradient(to bottom, #605b50, #ffffff0c); /* Soft gradient background */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    gap:20px;
+    padding: 20px;
+}
+
+.interaction{
+    display: flex;
+    gap:20px;
+}
+.event-main button{
+    padding:5px 10px;
+    border-radius:10px;
+}
+
+.commentBox-background{
+    background-color:rgba(0, 0, 0, 0.696);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.commentBox{
+    background-color:rgb(55, 55, 55);
+    color: white;
+    width: 80%;
+    height:80%;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+.commentBox .content{
+    margin-top: 20px;
+    border: 2px solid white;
+    height: 60%;
+    width: 80%;
+    border-radius: 20px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    overflow-y: auto;
+}
+
+.comment{
+    border:1px solid white;
+    padding:10px;
+    border-radius: 20px;
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
+.userDp{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.comment-input{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    width: 100%;
+}
+.comment-input input{
+    width: 50%;
+    border-radius:20px; 
+    padding:0px 20px;
+}
+
+.comment-display{
+    display: flex;
+    flex-direction: column;
+    gap:2px
+}
+
+.comment-username{
+    font-size: larger;    
+}
+
+.usercomment{
+    font-size: 15px;
+}
+
+.event-card {
+    padding: 25px;
+    border: 1px solid #ccc; /* Slightly lighter border for a subtle look */
+    border-radius: 16px; /* More rounded corners */
+    background: linear-gradient(to bottom, #605b50, #ffffff0c); /* Soft gradient background */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05); /* Modern shadow */
+    margin: 20px auto; /* Centers the card */
+    max-width: 800px; /* Increased width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    min-width: 400px;
+}
+  
+  .event-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .event-info {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+  
+  .event-label {
+    font-weight: bold;
+    color: #ff0000d4;
+    margin-right: 5px;
+  }
+  .app-heading {
+    text-align: center; 
+    font-size: 2rem;   
+    color: #fffcfc;       
+    margin-bottom: 20px; 
+  }
+
+
+  .event-title .byline{
+    font-size: 15px;
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 20px;
+  }
