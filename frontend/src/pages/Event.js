@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import close from "../pics/close.png";
 import { useLocation } from 'react-router-dom';
 
-const Event = ({ loggedIn, usr, allevent,fetchEvents }) => {
+const Event = ({ setToggleEvent,eventSelected, loggedIn, usr, allevent,fetchEvents }) => {
 
   const [tempEventsInfo,setTempEventsInfo]=useState()
 
@@ -18,14 +18,16 @@ const Event = ({ loggedIn, usr, allevent,fetchEvents }) => {
   };
   
   
-  const eventname = getQueryParam('eventname');
+  const eventname = eventSelected;
+  // alert(eventname)
+  // const eventname = getQueryParam('eventname');
   const username=localStorage.getItem('username')
   let temporaryUsr=usr;
   const navigate = useNavigate();
 
 
 
-  let currentEvent=allevent.find(x=>x.title.replace(/\s+/g,'')===eventname)
+  let currentEvent=allevent.find(x=>x.title===eventname)
 
 
   const [commenting, setCommenting] = useState(false);
@@ -186,19 +188,18 @@ const Event = ({ loggedIn, usr, allevent,fetchEvents }) => {
   return (
     <div className="event-main-no-use-div">
       {currentEvent &&
+      
       <div className="event-main">
-        {/* <button className='' onClick={addLikedRegistered}>alskfnas</button> */}
-        <img src={currentEvent.image} className="eventBackgroundImg" alt="" />
+        
         <div className="event-content">
-          {/* <h2>{currentEvent.title}</h2>
-          <h4>
-            Organized by: <span>{currentEvent.organizer}</span>
-          </h4>
-          <h4>
-            BIO: <span>{currentEvent.about}</span>
-          </h4>
-          <h4>Location: {currentEvent.location}</h4>
-          <h4>Time: {currentEvent.time}</h4> */}
+        <img
+              src={close}
+              className="close"
+              onClick={()=>{setToggleEvent(-1)}} 
+              alt=""
+            />
+        <img src={currentEvent.image} className="eventBackgroundImg" alt="" />
+          <div className="non-image">
           <div className="event-card">
             <h2 className="event-title">{currentEvent.title} <span className='byline'>organized by:{currentEvent.organizer}</span> </h2>
            <div className="event-info">
@@ -225,6 +226,8 @@ const Event = ({ loggedIn, usr, allevent,fetchEvents }) => {
               Register
             </button>
           </div>
+          </div>
+          
         </div>
 
         {commenting && (
@@ -247,13 +250,14 @@ const Event = ({ loggedIn, usr, allevent,fetchEvents }) => {
                 <input type="text" />
                 <button onClick={addComment}>Submit</button>
               </div>
-            </div>
-            <img
+              <img
               src={close}
               className="close"
               onClick={() => setCommenting(false)}
               alt=""
             />
+            </div>
+            
           </div>
         )}
       </div>

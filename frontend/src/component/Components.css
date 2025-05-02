@@ -1,10 +1,10 @@
 .navbar{
-    width:40%;
+    /* width:40%; */
     border-radius: 30px;
-    left: 50%;
-    transform: translate(-50%,0%);
+    right:0;
+    /* transform: translate(-50%,0%); */
     height:10%;
-    background-color:rgba(82, 100, 101, 0.52);
+    /* background-color:rgba(82, 100, 101, 0.52); */
     display: flex;
     justify-content: space-around;
     gap:150px;
@@ -34,12 +34,16 @@
 .navbar-profile{
     display: flex;
     align-items: center;
-    gap:20px;
+    gap:10px;
+    
 }
 .navbar-profile button{
     padding:0px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
+    color:white;
+    background-color: transparent;
 }
+
 
 /* ---------------------------------------------- */
 

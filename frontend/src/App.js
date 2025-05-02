@@ -11,7 +11,7 @@ import {useState} from 'react'
 import usrdp from './pics/x.jpg'
 import Admin from './pages/Admin'
 import './index.css'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useLocation} from 'react-router-dom'
 
 const App = () => {
 
@@ -22,6 +22,8 @@ const App = () => {
   const [event,setEvent]=useState([])
   const usrname=localStorage.getItem("username")
   const navigate=useNavigate()  
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   // [
   //   {
@@ -40,9 +42,9 @@ const App = () => {
         
   //     ]}
   //     ,{organiser:"",about:"Make your dream wedding a reality with our expert event management services! From stunning decor and seamless coordination to personalized touches, we ensure your special day is unforgettable. Book now to create cherished memories that last a lifetime!",title:"Wedding Event",location:"",time:"",image:"../pics/wed.jpg",comments:[]}
-  //     ,{organiser:"",about:"Host professional corporate events with ease! We provide seamless organization, cutting-edge technology, and bespoke services to make your conferences, seminars, or meetings a resounding success. Let’s elevate your next event!",title:"Corporate Event",location:"",time:"",image:"../pics/conf.jpeg",comments:[]}
-  //     ,{organiser:"",about:"Rock your event with live band performances! Whether it’s a concert, music festival, or a private gathering, we bring electrifying energy and unforgettable entertainment to your stage. Book the best bands now!",title:"Band Event",location:"",time:"",image:"../pics/wed/band.jpg",comments:[]}
-  //     ,{organiser:"",about:"Throw the ultimate party with our event management expertise! From vibrant themes and decor to exciting activities and music, we ensure your celebration is a hit. Let’s make your party unforgettable!",title:"Party Event",location:"",time:"",image:"../pics/wed/party.jpg",comments:[]}
+  //     ,{organiser:"",about:"Host professional corporate events with ease! We provide seamless organization, cutting-edge technology, and bespoke services to make your conferences, seminars, or meetings a resounding success. Let's elevate your next event!",title:"Corporate Event",location:"",time:"",image:"../pics/conf.jpeg",comments:[]}
+  //     ,{organiser:"",about:"Rock your event with live band performances! Whether it's a concert, music festival, or a private gathering, we bring electrifying energy and unforgettable entertainment to your stage. Book the best bands now!",title:"Band Event",location:"",time:"",image:"../pics/wed/band.jpg",comments:[]}
+  //     ,{organiser:"",about:"Throw the ultimate party with our event management expertise! From vibrant themes and decor to exciting activities and music, we ensure your celebration is a hit. Let's make your party unforgettable!",title:"Party Event",location:"",time:"",image:"../pics/wed/party.jpg",comments:[]}
   // ])
 
   //on reloading, user logs out as the loggedin goes null
@@ -195,13 +197,17 @@ useEffect(()=>{
     <div className='main'>
         <div className="not-sidebar">
           <Navbar loggedIn={loggedIn} usr={usr} setUsr={setUsr}setLoggedIn={setLoggedIn} isAdmin={isAdmin}/>
+          {!isHomePage && (
+            <button className='homebutton' onClick={() => navigate('/')}>EMW</button>
+          )}
+
           <div className="main-content">
             <Routes>
-              <Route path='/event' element={<Event loggedIn={loggedIn} usr={usr} setUsr={setUsr} fetchEvents={fetchEvents}  allevent={event}/>}/>
+              {/* <Route path='/event' element={<Event loggedIn={loggedIn} usr={usr} setUsr={setUsr} fetchEvents={fetchEvents}  allevent={event}/>}/> */}
               {isAdmin!=='false' ?
               <Route path='/' element={<Admin addevent={addevent} loggedIn={loggedIn}/>}/>
               :
-              <Route path='/' element={<Home event={event} addevent={addevent} fetchEvents={fetchEvents} setEvent={setEvent} usr={usr} username={username}  loggedIn={loggedIn}/>}/>}
+              <Route path='/' element={<Home setUsr={setUsr} event={event} addevent={addevent} fetchEvents={fetchEvents} setEvent={setEvent} usr={usr} username={username}  loggedIn={loggedIn}/>}/>}
               
               <Route path='/login' element={<Login fetchUsr={fetchUsr}   setLoggedIn={setLoggedIn}/>}/>
               <Route path='/signup' element={<Signup/>}/>

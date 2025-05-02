@@ -8,10 +8,11 @@ const Navbar = ({loggedIn,setLoggedIn,usr,setUsr,isAdmin}) => {
   
   return (
     <div className="navbar">
-      <div className="" style={{display:"flex",alignItems:"center"}}>
-        <img src={logo} onClick={()=>{navigate('/')}} alt="" />
-        <h2>Event Management</h2>
-      </div>
+      
+      {/* <div className="" style={{display:"flex",alignItems:"center"}}> */}
+        {/* <img src={logo} onClick={()=>{navigate('/')}} alt="" /> */}
+        {/* <h2>Event Management</h2> */}
+      {/* </div> */}
       <div className="links">
         {loggedIn && 
           <div className="navbar-profile">

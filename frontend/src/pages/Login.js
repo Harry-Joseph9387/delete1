@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import styles from './LoginForm.module.css';  // Assuming you want to use your friend's styling
 import { Link } from 'react-router-dom';
 
-const Login = ({ setLoggedIn,fetchUsr }) => {
+const Login = ({ setLoggedIn, fetchUsr }) => {
     const navigate = useNavigate();
+    const [showNotification, setShowNotification] = useState(true);
 
     const loginFunct = async () => {
         const inputs = document.querySelectorAll('input');
@@ -37,8 +38,23 @@ const Login = ({ setLoggedIn,fetchUsr }) => {
         }
     };
 
+    const closeNotification = () => {
+        setShowNotification(false);
+    };
+
     return (
         <div className={styles.loginmain}>
+            {showNotification && (
+                <div className={styles.notification}>
+                    <div className={styles.notificationContent}>
+                        <h3>Test Credentials</h3>
+                        <p>Admin login: <strong>username:</strong> admin, <strong>password:</strong> admin</p>
+                        <p>User login: <strong>username:</strong> user1, <strong>password:</strong> user1</p>
+                        <button className={styles.okButton} onClick={closeNotification}>OK</button>
+                    </div>
+                </div>
+            )}
+            
             <div className={styles.box}>
                 <h1>Login</h1>
 
