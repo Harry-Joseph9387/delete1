@@ -19,6 +19,9 @@
     height:60px;
     border-radius: 10px;
 }
+.navbar-profile .username{
+  display: none;
+}
 .links{
     gap:20px;
     display: flex;
@@ -99,4 +102,40 @@
     height:25px;
     border-radius:10px;
     
+}
+
+/* Add this to your existing navbar CSS */
+@media (max-width: 700px) {
+  /* Regular navbar is hidden on small screens via Home.css */
+  /* Specific styles for navbar inside dropdown */
+  .mobile-nav-dropdown .navbar {
+    width: 100%;
+    gap: 10px;
+    margin-right: 0;
+    position: relative;
+    top: 0;
+  }
+  .navbar-profile .username{
+    display: block;
+  }
+  .mobile-nav-dropdown .links {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mobile-nav-dropdown .navbar-profile {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .mobile-nav-dropdown .navbar-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .mobile-nav-dropdown .navbar-links a {
+    text-decoration: none;
+    color: white;
+  }
 }

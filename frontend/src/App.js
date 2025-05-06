@@ -207,8 +207,8 @@ useEffect(()=>{
               {isAdmin!=='false' ?
               <Route path='/' element={<Admin addevent={addevent} loggedIn={loggedIn}/>}/>
               :
-              <Route path='/' element={<Home setUsr={setUsr} event={event} addevent={addevent} fetchEvents={fetchEvents} setEvent={setEvent} usr={usr} username={username}  loggedIn={loggedIn}/>}/>}
-              
+              <Route path='/' element={<Home setLoggedIn={setLoggedIn} isAdmin={isAdmin} setUsr={setUsr} event={event} addevent={addevent} fetchEvents={fetchEvents} setEvent={setEvent} usr={usr} username={username}  loggedIn={loggedIn}/>}/>}
+               
               <Route path='/login' element={<Login fetchUsr={fetchUsr}   setLoggedIn={setLoggedIn}/>}/>
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/profile' element={<Profile fetchEvents={fetchEvents} usr={usr} setUsr={setUsr} addevent={addevent}/>}/>

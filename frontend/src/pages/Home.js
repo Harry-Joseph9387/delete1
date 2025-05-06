@@ -9,13 +9,15 @@ import bgEffect from '../pics/bgEffect.png'
 import logo from '../pics/logo.jpg'
 import AddingEvent from '../component/AddingEvent';
 import Event from './Event';
+import Navbar from '../component/Navbar';
 
-const Home = ({event,usr,setEvent,loggedIn,fetchEvents,username,addevent,setUsr}) => {
+const Home = ({setLoggedIn,isAdmin,event,usr,setEvent,loggedIn,fetchEvents,username,addevent,setUsr}) => {
   const [toggleCreateEvent,setToggleCreateEvent]=useState(-1)
   const [toggleEvent,setToggleEvent]=useState(-1);
   const [eventSelected,setEventSelected]=useState()
   const navigate = useNavigate();
   const [isExiting, setIsExiting] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
   
   // Define fixed scattered positions based on screen sizes
   const getResponsivePositions = () => {
@@ -55,19 +57,19 @@ const Home = ({event,usr,setEvent,loggedIn,fetchEvents,username,addevent,setUsr}
     
     // Small screen positions (mobile)
     const smallScreenPositions = [
-      { left: '25%', top: '8%' },      // Stacked vertically with more spacing
-      { left: '75%', top: '8%' },
-      { left: '25%', top: '23%' },
-      { left: '75%', top: '23%' },
-      { left: '25%', top: '38%' },
-      { left: '75%', top: '38%' },
-      { left: '25%', top: '53%' },
-      { left: '75%', top: '53%' },
-      { left: '25%', top: '68%' },
-      { left: '75%', top: '68%' },
-      { left: '25%', top: '83%' },
-      { left: '75%', top: '83%' },
-      { left: '50%', top: '95%' },
+      { left: '0%', top: '0%' },      // Stacked vertically with more spacing
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
+      { left: '0%', top: '0%' },
     ];
     
     // Determine current screen size
@@ -106,21 +108,42 @@ const Home = ({event,usr,setEvent,loggedIn,fetchEvents,username,addevent,setUsr}
 
   return (
     <div className="home-main">
-      {/* <img src={bgEffect} className='bgEffect' alt="" /> */}
-        <div className="company">
-          <div className="company_logo_name">
-            {/* <img src={logo} alt="" /> */}
-            <h1>Event <br /> Management <br /> Company</h1>
-          </div>
-          <div className="intro-description">
-            <p>Welcome to your ultimate event partner!</p>
-            <p>Turning moments into memories.</p>
-            <p>Plan less, celebrate more!</p>
-            <p>Where every event becomes unforgettable.</p>
-          </div>
+      {/* Mobile Nav Toggle Button */}
+      <div className="mobile-nav-toggle">
+        <div 
+          className={`dropdown-arrow ${showMobileNav ? 'active' : ''}`}
+          onClick={() => setShowMobileNav(!showMobileNav)}
+        >
+          &#9662;
         </div>
+        
+        {/* Mobile Nav Dropdown */}
+        <div className={`mobile-nav-dropdown ${showMobileNav ? 'show' : ''}`}>
+          <Navbar 
+            loggedIn={loggedIn} 
+            setLoggedIn={setLoggedIn} 
+            usr={usr} 
+            setUsr={setUsr} 
+            isAdmin={isAdmin}
+          />
+        </div>
+      </div>
+
+      {/* <img src={bgEffect} className='bgEffect' alt="" /> */}
+      <div className="company">
+        <div className="company_logo_name">
+          {/* <img src={logo} alt="" /> */}
+          <h1>Event <br /> Management <br /> Company</h1>
+        </div>
+        <div className="intro-description">
+          <p>Welcome to your ultimate event partner!</p>
+          <p>Turning moments into memories.</p>
+          <p>Plan less, celebrate more!</p>
+          <p>Where every event becomes unforgettable.</p>
+        </div>
+      </div>
   
-        <h1 className='intro-title-2'>Trending Events</h1>
+      <h1 className='intro-title-2'>Trending Events</h1>
       <div className="event">
         {displayedEvents.map((x, index) => {
           const position = positions[index];
@@ -131,7 +154,7 @@ const Home = ({event,usr,setEvent,loggedIn,fetchEvents,username,addevent,setUsr}
               // onClick={() => window.location.href = `/event?eventname=${x.title.replace(/\s+/g,'')}`}
               onClick={()=>{setEventSelected(x.title);setToggleEvent( toggleEvent*-1);}}
               style={{
-                position: 'absolute',
+                // position: 'absolute',
                 top: position.top,
                 left: position.left
               }}

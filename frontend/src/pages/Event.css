@@ -42,6 +42,7 @@
     max-height: 600px;
     min-height: 400px;
     min-width: 600px;
+    border-radius: 10px;
     /* min-width: 600px; */
     /* position: absolute;
     z-index: 0;
@@ -328,7 +329,7 @@
     font-size: 1.5rem;
     text-align: center;
     color: #ffffff;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
   }
   
   .event-info {
@@ -456,10 +457,13 @@
 
 @media (max-width: 768px) {
   .eventBackgroundImg {
-    max-width: 450px;
-    max-height: 300px;
-    min-height: 100px;
+    max-width: 100%;
+    max-height: 250px;
+    min-height: 80px;
+    height: 140px;
     width: 80%;
+    min-width: 0px;
+    /* width: 95%; */
   }
   
   .interaction button {
@@ -479,15 +483,15 @@
   .commentBox {
     width: 50%;
   }
+  .event-info p{
+    font-size: 14px;
+  }
+  .event-card .byline{
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 576px) {
-  .eventBackgroundImg {
-    max-width: 100%;
-    max-height: 250px;
-    min-height: 180px;
-    /* width: 95%; */
-  }
   
   .interaction {
     gap: 10px;
@@ -501,21 +505,44 @@
     font-size: 11px;
     letter-spacing: 0.5px;
   }
-  
+  .event-content{
+    padding:20px;
+    width: 70%;
+  }
+  .non-image{
+    gap:20px;
+  }
+  .event-card{
+    width: 70%;
+  }
   .commentBox {
     width: 85%;
     min-width: unset;
+  }
+  .event-card .event-title{
+    font-size: 18px;
+  }
+  .event-card .byline{
+    font-size: 12px;
   }
   .event-content{
     height: 75%;
     margin-top: 60px;
   }
+  .event-info .event-label {
+    font-size: 15px;
+  }
+  .event-info p{
+    font-size: 13px;
+  }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   .eventBackgroundImg {
     max-height: 200px;
-    min-height: 150px;
+    /* min-height: 150px; */
+    height: 120px;
+    width: 100%;
   }
   .event-content .interaction{
     margin-top: 10px;
@@ -523,5 +550,12 @@
   .interaction button {
     min-width: 40px;
     padding: 5px 8px;
+  }
+  .event-info .event-label {
+    font-size: 13px;
+  }
+  .event-card{
+    padding:15px;
+    width: 90%;
   }
 }

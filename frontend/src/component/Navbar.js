@@ -17,8 +17,9 @@ const Navbar = ({loggedIn,setLoggedIn,usr,setUsr,isAdmin}) => {
         {loggedIn && 
           <div className="navbar-profile">
             {isAdmin==='false' &&
-              <img src={(usr&&usr.image)?usr.image:userdp} onClick={()=>{navigate('/profile')}} alt="" />      
-            }  
+              <img src={(usr&&usr.image)?usr.image:userdp} onClick={()=>{navigate('/profile')}} alt="" />
+            }
+              <p className='username'>{usr?usr.username:''}</p>
               <button onClick={()=>{localStorage.setItem('loggedIn','');setLoggedIn(false);setUsr({});localStorage.setItem("username","")}}>logout</button>
           </div>
         }
